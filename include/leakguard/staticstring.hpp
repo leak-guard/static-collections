@@ -668,7 +668,7 @@ using StaticStringOfLength = StaticString<std::max<size_t>(1, arrayLength - 1)>;
  * @return a StaticString instance with deduced capacity
  */
 template <size_t arrayLength>
-inline constexpr StaticStringOfLength<arrayLength> STR(const char (&buffer)[arrayLength])
+inline consteval StaticStringOfLength<arrayLength> STR(const char (&buffer)[arrayLength])
 {
     return StaticStringOfLength<arrayLength>(buffer, arrayLength - 1);
 }
@@ -687,7 +687,7 @@ inline constexpr StaticStringOfLength<arrayLength> STR(const char (&buffer)[arra
  * @return a StaticString instance with deduced capacity
  */
 template <>
-inline constexpr StaticStringOfLength<1> STR<1>(const char (&buffer)[1])
+inline consteval StaticStringOfLength<1> STR<1>(const char (&buffer)[1])
 {
     return {};
 }
