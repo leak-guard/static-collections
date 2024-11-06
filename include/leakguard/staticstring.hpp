@@ -485,11 +485,11 @@ public:
     }
 
     /**
-     * @brief Provides implicit conversion to a C-style array of chars
+     * @brief Provides explicit conversion to a C-style array of chars
      *
      * @return Pointer to a zero-terminated char array
      */
-    operator const char*() const noexcept
+    explicit operator const char*() const noexcept
     {
         return m_buffer.data();
     }
