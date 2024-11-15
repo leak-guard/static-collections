@@ -640,7 +640,7 @@ public:
 
 private:
     size_t m_currentSize { 0 };
-    mutable std::array<char, maxSize + 1> m_buffer;
+    mutable std::array<char, maxSize + 1> m_buffer {};
 };
 
 // NOLINTBEGIN(cppcoreguidelines-avoid-c-arrays, modernize-avoid-c-arrays)
